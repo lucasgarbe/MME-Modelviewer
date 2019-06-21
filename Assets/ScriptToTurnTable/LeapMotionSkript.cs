@@ -4,7 +4,7 @@ using UnityEngine;
 using Leap;
 using Leap.Unity;
 
-public class podiumScript : MonoBehaviour
+public class LeapMotionSkript : MonoBehaviour
 {
     LeapServiceProvider provider;
     // Start is called before the first frame update
