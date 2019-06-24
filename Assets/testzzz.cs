@@ -37,10 +37,12 @@ public class testzzz : MonoBehaviour
         Rigidbody rigid = loadedObject.AddComponent<Rigidbody>();
         rigid.useGravity = false;
         BoxCollider body = loadedObject.AddComponent<BoxCollider>();
+		loadedObject.AddComponent<InteractionBehaviour>();
+
         //System.Type scriptType = System.Type.GetType("InteractionBehaviour");
         //Debug.Log(scriptType);
         //UnityScript s = loadedObject.AddComponent<>(scriptType);
-        loadedObject.AddComponent<InteractionBehaviour>();
+        
         //error = string.Empty;
     }
 
