@@ -4,6 +4,7 @@ using UnityEngine;
 using Crosstales.FB;
 using Dummiesman;
 using System.IO;
+using Leap.Unity.Interaction;
 
 public class testzzz : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class testzzz : MonoBehaviour
         //System.Type scriptType = System.Type.GetType("InteractionBehaviour");
         //Debug.Log(scriptType);
         //UnityScript s = loadedObject.AddComponent<>(scriptType);
-        //loadedObject.AddComponent();
+        loadedObject.AddComponent<InteractionBehaviour>();
         //error = string.Empty;
     }
 
