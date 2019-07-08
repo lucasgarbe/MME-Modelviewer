@@ -29,10 +29,9 @@ public class MenuScript : MonoBehaviour
 		GameObject slider = GameObject.Find("Slider");
 
 		string objPath = FileBrowser.OpenSingleFile("obj");
-		if (loadedObject != null) Destroy(loadedObject);
+		//if (loadedObject != null) Destroy(loadedObject);
         loadedObject = new OBJLoader().Load(objPath);
-
-		loadedObject.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+		//loadedObject.transform.localScale = new Vector3(0.002f, 0.002f, 0.002f);
 		Rigidbody rigid = loadedObject.AddComponent<Rigidbody>();
         rigid.useGravity = false;
         rigid.isKinematic = true;

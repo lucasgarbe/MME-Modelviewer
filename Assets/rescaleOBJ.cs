@@ -21,13 +21,14 @@ public class rescaleOBJ : MonoBehaviour
 
 		foreach(Collider collider in colliderBoundingBox){
 			bool doesIntersect = collider.bounds.Intersects(colliderContainedOBJ.bounds);
+            Debug.Log("Intersects" + doesIntersect);
 			if(doesIntersect){
-				Debug.Log(doesIntersect+":intersect");
 				containedOBJ.transform.localScale -= new Vector3(0.001f,0.001f,0.001f);
-				break;
-			}else{
-				Debug.Log(collider+":nope");
-			}
+                break;
+            }
+            else{
+                break;
+            }
 		}
 	
 			/*Debug.Log(colliderBoundingBox.bounds.ToString());
