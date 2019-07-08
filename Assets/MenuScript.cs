@@ -9,10 +9,16 @@ using Leap.Unity.Interaction;
 
 public class MenuScript : MonoBehaviour
 {		
+		public GameObject boundingBox;
 		public Canvas menu;
 		string objPath = string.Empty;
 		string error = string.Empty;
 		GameObject loadedObject;
+
+
+	void Start(){
+		
+	}
 
 	public void continueScene(){
 		menu.enabled = false;
@@ -20,19 +26,26 @@ public class MenuScript : MonoBehaviour
 	}
 
 	public void loadFile(){
+		GameObject slider = GameObject.Find("Slider");
+
 		string objPath = FileBrowser.OpenSingleFile("obj");
 		if (loadedObject != null) Destroy(loadedObject);
         loadedObject = new OBJLoader().Load(objPath);
-        loadedObject.transform.position = new Vector3(-0.3f, 4.4f, -14.8f);
-        loadedObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-        Rigidbody rigid = loadedObject.AddComponent<Rigidbody>();
+
+		loadedObject.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+		Rigidbody rigid = loadedObject.AddComponent<Rigidbody>();
         rigid.useGravity = false;
         BoxCollider body = loadedObject.AddComponent<BoxCollider>();
 		loadedObject.AddComponent<InteractionBehaviour>();
+
+		GameObject.Find("ModelSelectSlider").GetComponent<SliderModelManager>().addToObjects(loadedObject);
+
+		//loadedObject.transform.position = new Vector3(-0.329f,4.06f,-14.475f);
 	}
 
 	public void exitApplication(){
 		Debug.Log("Exit");
 		Application.Quit();
 	}
+
 }
