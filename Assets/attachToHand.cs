@@ -14,9 +14,12 @@ public class attachToHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _HandModel = _HandController.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
-        transform.position = _HandModel.transform.position + new Vector3(0.1f, 0.1f, 0);
-        Debug.Log(_HandModel.transform.position+"Hand Position");
-        Debug.Log(transform.position+"New Sphere Position");
+        if (gameObject.GetComponent<MenuActions>().isActive)
+        {
+            _HandModel = _HandController.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
+            transform.position = _HandModel.transform.position + new Vector3(0.1f, 0.1f, 0);
+            Debug.Log(_HandModel.transform.position + "Hand Position");
+            Debug.Log(transform.position + "New Sphere Position");
+        }
     }
 }
