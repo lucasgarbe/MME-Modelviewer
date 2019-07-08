@@ -32,12 +32,15 @@ public class SliderModelManager : MonoBehaviour
 	}
 
 	public void addToBoundingBox(GameObject obj,int sockel_Index){
-		sockel[sockel_Index].transform.GetChild(0).gameObject.GetComponent<rescaleOBJ>().containedOBJ = obj;
-		GameObject cO = sockel[sockel_Index].transform.GetChild(0).gameObject.GetComponent<rescaleOBJ>().containedOBJ;
-		Debug.Log(cO+"OBJ-Before"); 
-		Debug.Log(cO+"OBJ-After");
-		Transform sockel_Transform = sockel[sockel_Index].transform;
-		obj.transform.position = sockel_Transform.position + new Vector3(0f,0.018f,0f);
+        GameObject boundingBox = sockel[sockel_Index].transform.GetChild(0).gameObject;
+        Transform sockel_Transform = sockel[sockel_Index].transform;
+        obj.transform.position = sockel_Transform.position + new Vector3(0f, 0.018f, 0f);
+        obj.transform.parent = boundingBox.transform;
+        boundingBox.GetComponent<rescaleOBJ>().containedOBJ = obj;
+        
+
+        
+		
 	}
 
 	 //grandChild = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;

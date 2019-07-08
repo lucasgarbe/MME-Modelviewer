@@ -35,6 +35,7 @@ public class MenuScript : MonoBehaviour
 		loadedObject.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
 		Rigidbody rigid = loadedObject.AddComponent<Rigidbody>();
         rigid.useGravity = false;
+        rigid.isKinematic = true;
         BoxCollider body = loadedObject.AddComponent<BoxCollider>();
 		loadedObject.AddComponent<InteractionBehaviour>();
 
