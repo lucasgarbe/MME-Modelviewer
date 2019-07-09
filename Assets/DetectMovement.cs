@@ -7,8 +7,8 @@ using Leap.Unity;
 public class DetectMovement : MonoBehaviour
 {
     LeapServiceProvider provider;
-    private int LHPalmDirection;
-    private int RHPalmDirection;
+    private string LHPalmDirection;
+    private string RHPalmDirection;
     TurntableActions TurntableScript;
 
     void Start()
@@ -23,61 +23,117 @@ public class DetectMovement : MonoBehaviour
         Frame frame = provider.CurrentFrame;
         foreach (Hand hand in frame.Hands)
         {
+            Leap.Vector velo = hand.PalmVelocity;
+
             if (hand.IsLeft)
             {
-                Leap.Vector velo = hand.PalmVelocity;
 
-                if (velo.x > 0.2 && LHPalmDirection == 1)
+                if (LHPalmDirection == "right")
                 {
-                    Debug.Log("ROTATE RIGHT");
-                    TurntableScript.AddRightRotation();
-                }
-                if ((velo.x > - 0.2 || velo.x < 0.2) && LHPalmDirection == 1)
+                    if (velo.x < -0.2)
+                    {
+                        TurntableScript.AddLeftRotation();
+                    }
+                    else if (velo.x > 0.2)
+                    {
+                        TurntableScript.AddRightRotation();
+                    }
+                    else
+                    {
+                        TurntableScript.RemoveRotation();
+                    }
+                } else
                 {
                     TurntableScript.RemoveRotation();
-                }
-                if (velo.x < -0.2 && LHPalmDirection == 1)
-                {
-                    TurntableScript.AddLeftRotation();
                 }
             }
             else
             {
-
+                if (RHPalmDirection == "left")
+                {
+                    if (velo.x < -0.2)
+                    {
+                        TurntableScript.AddLeftRotation();
+                    }
+                    else if (velo.x > 0.2)
+                    {
+                        TurntableScript.AddRightRotation();
+                    }
+                    else
+                    {
+                        TurntableScript.RemoveRotation();
+                    }
+                } else
+                {
+                    TurntableScript.RemoveRotation();
+                }
             }
         }
     }
 
     public void SetLHPalmLeft()
     {
-        LHPalmDirection = -1;
+        LHPalmDirection = "left";
         Debug.Log("lh palm left");
-    }
-
-    public void SetLHPalmNone()
-    {
-        LHPalmDirection = 0;
-        Debug.Log("lh palm none");
     }
 
     public void SetLHPalmRight()
     {
-        LHPalmDirection = 1;
+        LHPalmDirection = "right";
         Debug.Log("lh palm right");
     }
 
-    public void SetRHPalmLeft()
+    public void SetLHPalmDown()
     {
-        RHPalmDirection = -1;
+        LHPalmDirection = "down";
+        Debug.Log("lh palm down");
     }
 
-    public void SetRHPalmNone()
+    public void SetLHPalmUp()
     {
-        RHPalmDirection = 0;
+        LHPalmDirection = "up";
+        Debug.Log("lh palm up");
+    }
+
+    public void SetLHPalmNone()
+    {
+        LHPalmDirection = "none";
+        Debug.Log("lh palm none");
+    }
+
+
+
+
+
+
+    public void SetRHPalmLeft()
+    {
+        RHPalmDirection = "left";
+        Debug.Log("rh palm left");
     }
 
     public void SetRHPalmRight()
     {
-        RHPalmDirection = 1;
+        RHPalmDirection = "right";
+        Debug.Log("rh palm right");
     }
+
+    public void SetRHPalmDown()
+    {
+        RHPalmDirection = "down";
+        Debug.Log("rh palm down");
+    }
+
+    public void SetRHPalmUp()
+    {
+        RHPalmDirection = "up";
+        Debug.Log("rh palm up");
+    }
+
+    public void SetRHPalmNone()
+    {
+        RHPalmDirection = "none";
+        Debug.Log("rh palm none");
+    }
+
 }
