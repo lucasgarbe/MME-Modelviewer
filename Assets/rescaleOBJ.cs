@@ -20,21 +20,26 @@ public class rescaleOBJ : MonoBehaviour
 		Collider colliderContainedOBJ = containedOBJ.GetComponent<Collider>();
 
 		foreach(Collider collider in colliderBoundingBox){
-			bool doesIntersect = collider.bounds.Intersects(colliderContainedOBJ.bounds);
-            Debug.Log("Intersects" + doesIntersect);
-			if(doesIntersect){
-				containedOBJ.transform.localScale -= new Vector3(0.001f,0.001f,0.001f);
-                break;
-            }
-            else{
-                break;
+            if (collider != colliderContainedOBJ)
+            {
+                bool doesIntersect = collider.bounds.Intersects(colliderContainedOBJ.bounds);
+                Debug.Log("Intersects" + doesIntersect);
+                if (doesIntersect)
+                {
+                    Debug.Log("IntersectCollider" + collider);
+                    if (containedOBJ.transform.localScale.x > 0 && containedOBJ.transform.localScale.y > 0 && containedOBJ.transform.localScale.z > 0)
+                    {
+                        containedOBJ.transform.localScale -= new Vector3(0.001f, 0.001f, 0.001f);
+                        Debug.Log(collider.bounds.ToString());
+                        doesIntersect = false;
+                    }
+                    break;
+                }
+                Debug.Log("ende intersect");
             }
 		}
 	
-			/*Debug.Log(colliderBoundingBox.bounds.ToString());
 			
-			colliderContainedOBJ.transform.localScale -= new Vector3(0.001f,0.001f,0.001f);
-			doesIntersect = false;*/
     }
 
 

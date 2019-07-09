@@ -31,11 +31,15 @@ public class MenuScript : MonoBehaviour
 		string objPath = FileBrowser.OpenSingleFile("obj");
 		//if (loadedObject != null) Destroy(loadedObject);
         loadedObject = new OBJLoader().Load(objPath);
-		//loadedObject.transform.localScale = new Vector3(0.002f, 0.002f, 0.002f);
-		Rigidbody rigid = loadedObject.AddComponent<Rigidbody>();
+        //loadedObject.transform.localScale = new Vector3(0.002f, 0.002f, 0.002f);
+        Bounds b = RecursiveMeshBB(loadedObject);
+        
+        Rigidbody rigid = loadedObject.AddComponent<Rigidbody>();
         rigid.useGravity = false;
         rigid.isKinematic = true;
         BoxCollider body = loadedObject.AddComponent<BoxCollider>();
+        body.center = b.center;
+        body.size = b.size;
 		loadedObject.AddComponent<InteractionBehaviour>();
 
 		GameObject.Find("ModelSelectSlider").GetComponent<SliderModelManager>().addToObjects(loadedObject);
@@ -47,5 +51,23 @@ public class MenuScript : MonoBehaviour
 		Debug.Log("Exit");
 		Application.Quit();
 	}
+
+    private Bounds RecursiveMeshBB(GameObject g)
+    {
+        MeshRenderer[] mr = g.GetComponentsInChildren<MeshRenderer>();
+        if (mr.Length > 0)
+        {
+            Bounds b = mr[0].bounds;
+            for(int i=1; i<mr.Length; i++)
+            {
+                b.Encapsulate(mr[i].bounds);
+            }
+            return b;
+        }
+        else
+        {
+            return new Bounds();
+        }
+    }
 
 }
