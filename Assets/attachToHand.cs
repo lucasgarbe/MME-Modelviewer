@@ -1,25 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Leap;
+using Leap.Unity;
 
 public class attachToHand : MonoBehaviour
 {
     public GameObject _HandController;
-    private GameObject _HandModel;
+    private HandModel _HandModel;
+    private LeapServiceProvider LSP;
     // Start is called before the first frame update
     void Start()
     {
+        LSP = FindObjectOfType<LeapServiceProvider>() as LeapServiceProvider;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.GetComponent<MenuActions>().isActive)
+        Debug.Log("HANDS: " + LSP.CurrentFrame.Hands);
+        if (gameObject.GetComponent<MenuActions>().isActive && LSP.CurrentFrame.Hands.Count > 1)
         {
-            _HandModel = _HandController.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
-            transform.position = _HandModel.transform.position + new Vector3(0.1f, 0.1f, 0);
-            Debug.Log(_HandModel.transform.position + "Hand Position");
-            Debug.Log(transform.position + "New Sphere Position");
+            GameObject HandObject = _HandController.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
+            transform.position = HandObject.transform.position + new Vector3(0.1f, 0.1f, 0);
         }
     }
 }
