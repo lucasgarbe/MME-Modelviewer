@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7699354730237029542}
   - component: {fileID: 7699354730237029544}
   - component: {fileID: 7699354730237029545}
+  - component: {fileID: 9150569844574253015}
+  - component: {fileID: 1671923709554928720}
   m_Layer: 0
   m_Name: BoundingBox
   m_TagString: Untagged
@@ -98,6 +100,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boundingBox: {fileID: 7699354730237029546}
   containedOBJ: {fileID: 0}
+--- !u!114 &9150569844574253015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699354730237029546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d41df48eac6fb94ca780e70321e3125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1671923709554928720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699354730237029546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b77174815b904166ad047382f534c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9150569844574253015}
+        m_MethodName: Clone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Period: 0.1
+  HandModel: {fileID: 0}
+  FingerName: 1
+  PointingType: 3
+  PointingDirection: {x: 0, y: 0, z: 1}
+  TargetObject: {fileID: 7699354730237029541}
+  OnAngle: 20
+  OffAngle: 30
+  ShowGizmos: 1
 --- !u!1 &7699354730828373925
 GameObject:
   m_ObjectHideFlags: 0

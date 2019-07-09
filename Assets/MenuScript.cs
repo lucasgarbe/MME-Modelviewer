@@ -43,17 +43,14 @@ public class MenuScript : MonoBehaviour
         rigid.useGravity = false;
         rigid.isKinematic = true;
         BoxCollider body = loadedObject.AddComponent<BoxCollider>();
+        body.isTrigger = true;
         body.center = b.center;
         body.size = b.size;
-		loadedObject.AddComponent<InteractionBehaviour>();
 
-        FingerDirectionDetector originalFDD = gameObject.GetComponent<FingerDirectionDetector>();
+        /*FingerDirectionDetector originalFDD = gameObject.GetComponent<FingerDirectionDetector>();
         CopyComponent(originalFDD, loadedObject);
         FingerDetector = loadedObject.GetComponent<FingerDirectionDetector>();
-        FingerDetector.TargetObject = loadedObject.transform;
-        
-
-        loadedObject.AddComponent<updateOnFingerPoint>();
+        FingerDetector.TargetObject = loadedObject.transform;*/
 
 		GameObject.Find("ModelSelectSlider").GetComponent<SliderModelManager>().addToObjects(loadedObject);
 
@@ -85,8 +82,22 @@ public class MenuScript : MonoBehaviour
 
     public void Clone()
     {
-        Instantiate(loadedObject, GameObject.Find("Podest").transform);
-        
+        GameObject podest = GameObject.Find("Podest");
+        List<GameObject> objs = podest.transform.GetChild(1).GetComponent<rescaleOBJTurntable>().containedOBJs;
+        bool placedOnTurntable = false;
+
+        foreach(GameObject obj in objs)
+        {
+            
+        }
+
+        if (!placedOnTurntable)
+        {
+            GameObject clone = Instantiate(loadedObject, podest.transform);
+            podest.transform.GetChild(1).GetComponent<rescaleOBJTurntable>().containedOBJs.Add(clone);
+            placedOnTurntable = true;
+        }
+        // addcomponent interactionbehaviour
     }
 
     IEnumerator test()
