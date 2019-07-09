@@ -1,20 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Crosstales.FB;
 using Dummiesman;
 using System.IO;
+using Leap;
+using Leap.Unity;
 using Leap.Unity.Interaction;
 
 
 public class MenuScript : MonoBehaviour
 {		
-		public GameObject boundingBox;
-		public Canvas menu;
-		string objPath = string.Empty;
-		string error = string.Empty;
-		GameObject loadedObject;
-
+	public GameObject boundingBox;
+	public Canvas menu;
+	string objPath = string.Empty;
+	string error = string.Empty;
+	GameObject loadedObject;
+    FingerDirectionDetector FingerDetector;
+    public HandModel Hand;
+    private UnityAction FireAction;
 
 	void Start(){
 		
@@ -41,6 +46,14 @@ public class MenuScript : MonoBehaviour
         body.center = b.center;
         body.size = b.size;
 		loadedObject.AddComponent<InteractionBehaviour>();
+
+        FingerDirectionDetector originalFDD = gameObject.GetComponent<FingerDirectionDetector>();
+        CopyComponent(originalFDD, loadedObject);
+        FingerDetector = loadedObject.GetComponent<FingerDirectionDetector>();
+        FingerDetector.TargetObject = loadedObject.transform;
+        
+
+        loadedObject.AddComponent<updateOnFingerPoint>();
 
 		GameObject.Find("ModelSelectSlider").GetComponent<SliderModelManager>().addToObjects(loadedObject);
 
@@ -70,4 +83,26 @@ public class MenuScript : MonoBehaviour
         }
     }
 
+    public void Clone()
+    {
+        Instantiate(loadedObject, GameObject.Find("Podest").transform);
+        
+    }
+
+    IEnumerator test()
+    {
+        yield return new WaitForSecondsRealtime(3);
+    }
+
+    T CopyComponent<T>(T original, GameObject destination) where T : Component
+    {
+        System.Type type = original.GetType();
+        Component copy = destination.AddComponent(type);
+        System.Reflection.FieldInfo[] fields = type.GetFields();
+        foreach (System.Reflection.FieldInfo field in fields)
+        {
+            field.SetValue(copy, field.GetValue(original));
+        }
+        return copy as T;
+    }
 }
