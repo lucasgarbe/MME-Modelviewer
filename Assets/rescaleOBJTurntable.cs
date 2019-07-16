@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/** Skaliert Objekte auf dem Drehteller passend zur Bounding Box des Drehtellers
+ */
 public class rescaleOBJTurntable : MonoBehaviour
 {
-    public GameObject boundingBox;
-    public List<GameObject> containedOBJs;
+    public GameObject boundingBox; /**< Bounding Box des Drehtellers */
+    public List<GameObject> containedOBJs; /**< Liste aller Objekten, die auf dem Drehteller platziert sind */
 
-    // Start is called before the first frame update
+    /** Neue leere Liste wird erstellt */
     void Start()
     {
         containedOBJs = new List<GameObject>();
     }
 
-    // Update is called once per frame
+    /** Für alle Objekte auf dem Drehteller,
+     * wird überprüft ob sie sich mit der Bounding Box des Drehteller schneiden,
+     * falls sie sich schneiden werden sie herunterskaliert
+     */
     void Update()
     {
         foreach (GameObject coOBJ in containedOBJs)

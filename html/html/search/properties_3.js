@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['canopenmultiplefiles',['canOpenMultipleFiles',['../class_crosstales_1_1_f_b_1_1_file_browser.html#a664bb4b6a4b2d7bbc15867055e04f901',1,'Crosstales.FB.FileBrowser.canOpenMultipleFiles()'],['../interface_crosstales_1_1_f_b_1_1_wrapper_1_1_i_file_browser.html#a29f82f1d9ee3c33f7dc1282c7ac3cdd0',1,'Crosstales.FB.Wrapper.IFileBrowser.canOpenMultipleFiles()']]],
+  ['canopenmultiplefolders',['canOpenMultipleFolders',['../class_crosstales_1_1_f_b_1_1_file_browser.html#a372247238766850a44fba224957acfb5',1,'Crosstales.FB.FileBrowser.canOpenMultipleFolders()'],['../interface_crosstales_1_1_f_b_1_1_wrapper_1_1_i_file_browser.html#a567028659c99dface72d018c629ddd64',1,'Crosstales.FB.Wrapper.IFileBrowser.canOpenMultipleFolders()']]],
+  ['capacity',['Capacity',['../class_leap_1_1_unity_1_1_produce_consume_buffer.html#a04753532a728b38e5cc0226c797fbef1',1,'Leap::Unity::ProduceConsumeBuffer']]],
+  ['chirality',['chirality',['../class_leap_1_1_unity_1_1_attachments_1_1_attachment_hand.html#af525bdb21f50e37061ce6b69a351654f',1,'Leap::Unity::Attachments::AttachmentHand']]],
+  ['closesthoveringcontroller',['closestHoveringController',['../class_leap_1_1_unity_1_1_interaction_1_1_interaction_behaviour.html#af6a50b78ed79f3e69a2ce6b228319563',1,'Leap::Unity::Interaction::InteractionBehaviour']]],
+  ['closesthoveringcontrollerdistance',['closestHoveringControllerDistance',['../class_leap_1_1_unity_1_1_interaction_1_1_interaction_behaviour.html#aefe390893dcb760876ebf2ad2da4ccb2',1,'Leap::Unity::Interaction::InteractionBehaviour']]],
+  ['closesthoveringhand',['closestHoveringHand',['../class_leap_1_1_unity_1_1_interaction_1_1_interaction_behaviour.html#aeee4285667a660b5d1f8c49268eee4a5',1,'Leap::Unity::Interaction::InteractionBehaviour']]],
+  ['color',['color',['../class_leap_1_1_unity_1_1_runtime_gizmos_1_1_runtime_gizmo_drawer.html#abc3204be6b869c39d35876457ce8c9f0',1,'Leap::Unity::RuntimeGizmos::RuntimeGizmoDrawer']]],
+  ['config',['Config',['../class_leap_1_1_controller.html#a12503273371b21d58952a99b5fc5b0d9',1,'Leap::Controller']]],
+  ['configchange',['ConfigChange',['../class_leap_1_1_controller.html#aa95b8d42774232245cd10c23d90d0343',1,'Leap::Controller']]],
+  ['connect',['Connect',['../class_leap_1_1_controller.html#abc23a30fb9ef4327ab4c12dc90698f14',1,'Leap::Controller']]],
+  ['connectionlimit',['ConnectionLimit',['../class_crosstales_1_1_common_1_1_util_1_1_c_t_web_client.html#abe771c5adef1f5d1a5978ec23201e20f',1,'Crosstales::Common::Util::CTWebClient']]],
+  ['contactbonebodies',['contactBoneBodies',['../class_leap_1_1_unity_1_1_interaction_1_1_interaction_manager.html#a025e8a1a9e433fd86245a0e836deba86',1,'Leap::Unity::Interaction::InteractionManager']]],
+  ['contactingcontrollers',['contactingControllers',['../class_leap_1_1_unity_1_1_interaction_1_1_interaction_behaviour.html#a5bf2a4d57f21997852f8cf431e517f3f',1,'Leap::Unity::Interaction::InteractionBehaviour']]],
+  ['contactingobjects',['contactingObjects',['../class_leap_1_1_unity_1_1_interaction_1_1_interaction_controller.html#aa6604231c26a97eeade073ea2dc60d21',1,'Leap::Unity::Interaction::InteractionController']]],
+  ['controllertype',['controllerType',['../class_leap_1_1_unity_1_1_interaction_1_1_interaction_controller.html#a92f1e18d2bbdd8b1e3eea0d3c98c0b9f',1,'Leap.Unity.Interaction.InteractionController.controllerType()'],['../class_leap_1_1_unity_1_1_interaction_1_1_interaction_hand.html#af21b7c107fc75a75a362679d4471fa6a',1,'Leap.Unity.Interaction.InteractionHand.controllerType()'],['../class_leap_1_1_unity_1_1_interaction_1_1_interaction_x_r_controller.html#aae01e4ff3ef50d766b1a25d02b0e3e26',1,'Leap.Unity.Interaction.InteractionXRController.controllerType()']]],
+  ['count',['Count',['../class_leap_1_1_unity_1_1_produce_consume_buffer.html#ab7a378bf347d928035288ae0e790b938',1,'Leap::Unity::ProduceConsumeBuffer']]],
+  ['currentfixedframe',['CurrentFixedFrame',['../class_leap_1_1_unity_1_1_leap_provider.html#a9aab77328326eff69b42cf009cc73d9a',1,'Leap::Unity::LeapProvider']]],
+  ['currentframe',['CurrentFrame',['../class_leap_1_1_unity_1_1_leap_provider.html#a9a5cf65099912311c37f340d3be7e454',1,'Leap::Unity::LeapProvider']]],
+  ['currentobject',['CurrentObject',['../class_leap_1_1_unity_1_1_proximity_detector.html#acc3c0aa94505f393b7a458c4dc0e482e',1,'Leap::Unity::ProximityDetector']]],
+  ['currentplatform',['CurrentPlatform',['../class_crosstales_1_1_common_1_1_util_1_1_base_helper.html#ab0e7ea8e3309dda59ee651922d552e0a',1,'Crosstales::Common::Util::BaseHelper']]]
+];

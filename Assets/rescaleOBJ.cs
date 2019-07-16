@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/** Skaliert das geladen Model auf die Größe der gegebenen Bounding Box
+ */
 public class rescaleOBJ : MonoBehaviour
 {
-	public GameObject boundingBox;
-	public GameObject containedOBJ;
-	
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+	public GameObject boundingBox; /**< ausgewählte Bounding Box */
+	public GameObject containedOBJ; /**< Model, welches skaliert wird */ 
 
-    // Update is called once per frame
+    /** Checkt bei jedem Durchgang alle 6 BoxCollider der Bounding Box,
+     * wenn das geladene Model sich mit einem der 6 BoxCollider überschneidet
+     * wird es herunterskaliert.
+     */
     void Update()
     {
 		Collider[] colliderBoundingBox = boundingBox.GetComponentsInChildren<Collider>();

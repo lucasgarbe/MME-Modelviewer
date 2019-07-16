@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/** Setzt die Position des Objektes in die Mitte des Drehteller.
+ * Gleichzeitig wird die Rotation um die X und Z Achse
+ * und die Bewegung auf der Z Achse gesperrt.
+ */
 public class resetPosition : MonoBehaviour
-{
-    public bool isScaled = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+{ 
     // Update is called once per frame
     void Update()
     {

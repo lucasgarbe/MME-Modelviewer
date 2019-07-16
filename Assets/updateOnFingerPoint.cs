@@ -6,20 +6,13 @@ using Leap.Unity;
 using Leap.Unity.Interaction;
 
 
+/** Funktionen die ausgeführt, wenn ein Fingezeig erkannt wurde.
+ */
 public class updateOnFingerPoint : MonoBehaviour
 {
-    public bool placedOnTurntable = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool placedOnTurntable = false; /**< true, falls Objekt momentan auf dem Drehteller platziert ist*/
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    /** Klont das Objekt auf den Drehteller */
     public void Clone()
     {
         Debug.Log("CLONE");
@@ -36,7 +29,6 @@ public class updateOnFingerPoint : MonoBehaviour
             podest.transform.GetChild(1).GetComponent<rescaleOBJTurntable>().containedOBJs.Add(clone);
             placedOnTurntable = true;
         }
-    }
-
+    } 
 
 }

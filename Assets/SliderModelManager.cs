@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/** Managed die Objekte auf dem Model Slider
+ */
 public class SliderModelManager : MonoBehaviour
 {
 	
-	public List<GameObject> objects;
-	public List<GameObject> sockel;
+	public List<GameObject> objects; /**< Liste der Objekte die auf dem Model Slider platziert sind */
+	public List<GameObject> sockel; /**< List der Sockel, auf denen die Objekte platziert werden */
 
-    // Start is called before the first frame update
+    /** Initiiert leere Liste für objects
+     */
     void Start()
     {
         objects = new List<GameObject>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }	
-
+    /** Objekt wird in die Liste objects geschrieben und auf dem Model Slider platziert
+     * @param obj zu platzierendes Objekt
+     */
 	public void addToObjects(GameObject obj){
 		int lastObjIndex = objects.Count; 
 		if(lastObjIndex<6){
@@ -31,6 +31,10 @@ public class SliderModelManager : MonoBehaviour
 		}
 	}
 
+    /** Das Objekt wird an die Bounding Box gehängt.
+     * @param obj zu platzierendes Objekt
+     * @param sockel_Index Index des Sockels, auf dem das Objekt platziert werden soll
+     */
 	public void addToBoundingBox(GameObject obj,int sockel_Index){
         GameObject boundingBox = sockel[sockel_Index].transform.GetChild(0).gameObject;
         Transform sockel_Transform = sockel[sockel_Index].transform;
@@ -41,7 +45,6 @@ public class SliderModelManager : MonoBehaviour
         obj.transform.position += new Vector3(0f, -0.02f, 0f);
         boundingBox.GetComponent<rescaleOBJ>().containedOBJ = obj;
  
-	}
+	} 
 
-	 //grandChild = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
 }

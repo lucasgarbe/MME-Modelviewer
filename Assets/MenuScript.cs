@@ -9,27 +9,31 @@ using Leap;
 using Leap.Unity;
 using Leap.Unity.Interaction;
 
-
+/** Zuständig für das Laden der Dateien
+ * und Funktionen der Buttons, die im Menü, welches über Escape aufgerufen wird,
+ * angezeigt werden
+ */
 public class MenuScript : MonoBehaviour
 {		
-	public GameObject boundingBox;
-	public Canvas menu;
-	string objPath = string.Empty;
-	string error = string.Empty;
-	GameObject loadedObject;
-    FingerDirectionDetector FingerDetector;
-    public HandModel Hand;
-    private UnityAction FireAction;
+	public Canvas menu; /**< das Canvas, auf dem das Menü liegt */
+	string objPath = string.Empty; /**< Pfad der obj-Datei */
+	string error = string.Empty; /**< Fehler String, wird durch den OBJImporter erstellt */
+	GameObject loadedObject; /**< referenziert das geladene Objekt */
 
-	void Start(){
-		
-	}
-
+    /** wird beim Drücken von Continue aufgerufen,
+     * lässt Szene weiterlaufen
+     */
 	public void continueScene(){
 		menu.enabled = false;
 		Debug.Log(menu.enabled);
 	}
 
+    /** Lädt obj-Datei.
+     * Datei wird mit FileBrowser ausgewählt
+     * danach wird mit OBJImporter das Objekt geladen
+     * 
+     * Wird beim Drücke von Load OBJ ausgeführt
+     */
 	public void loadFile(){
 		GameObject slider = GameObject.Find("Slider");
 
@@ -47,21 +51,16 @@ public class MenuScript : MonoBehaviour
         body.center = b.center;
         body.size = b.size;
 
-        /*FingerDirectionDetector originalFDD = gameObject.GetComponent<FingerDirectionDetector>();
-        CopyComponent(originalFDD, loadedObject);
-        FingerDetector = loadedObject.GetComponent<FingerDirectionDetector>();
-        FingerDetector.TargetObject = loadedObject.transform;*/
-
-		GameObject.Find("ModelSelectSlider").GetComponent<SliderModelManager>().addToObjects(loadedObject);
-
-		//loadedObject.transform.position = new Vector3(-0.329f,4.06f,-14.475f);
+		GameObject.Find("ModelSelectSlider").GetComponent<SliderModelManager>().addToObjects(loadedObject); 
 	}
 
+    /** Schließt das Programm wenn der Button Close aktiviert wird */
 	public void exitApplication(){
 		Debug.Log("Exit");
 		Application.Quit();
 	}
 
+    /** Erstellt anhand der geladenen Meshes einen neuen Box-Collider, der alle Meshes umfasst */
     private Bounds RecursiveMeshBB(GameObject g)
     {
         MeshRenderer[] mr = g.GetComponentsInChildren<MeshRenderer>();
@@ -80,31 +79,7 @@ public class MenuScript : MonoBehaviour
         }
     }
 
-    public void Clone()
-    {
-        GameObject podest = GameObject.Find("Podest");
-        List<GameObject> objs = podest.transform.GetChild(1).GetComponent<rescaleOBJTurntable>().containedOBJs;
-        bool placedOnTurntable = false;
-
-        foreach(GameObject obj in objs)
-        {
-            
-        }
-
-        if (!placedOnTurntable)
-        {
-            GameObject clone = Instantiate(loadedObject, podest.transform);
-            podest.transform.GetChild(1).GetComponent<rescaleOBJTurntable>().containedOBJs.Add(clone);
-            placedOnTurntable = true;
-        }
-        // addcomponent interactionbehaviour
-    }
-
-    IEnumerator test()
-    {
-        yield return new WaitForSecondsRealtime(3);
-    }
-
+    /** TODO: was geht hier ab?!?!? */
     T CopyComponent<T>(T original, GameObject destination) where T : Component
     {
         System.Type type = original.GetType();

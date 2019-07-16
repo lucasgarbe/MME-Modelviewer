@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['makehandrepresentation',['MakeHandRepresentation',['../class_leap_1_1_unity_1_1_hand_model_manager.html#a9f0b658a31543c0ec44cc354e0a0007b',1,'Leap::Unity::HandModelManager']]],
+  ['match',['Match',['../struct_leap_1_1_unity_1_1_either.html#a4c0eaf284c03842b99f53ec3f059faac',1,'Leap.Unity.Either.Match()'],['../struct_leap_1_1_unity_1_1_maybe.html#a4a9e92db2681f7e079cc348e6794ac9b',1,'Leap.Unity.Maybe.Match(Action&lt; T &gt; ifValue)'],['../struct_leap_1_1_unity_1_1_maybe.html#a38c4cfc0ba561054138d7d66ae938701',1,'Leap.Unity.Maybe.Match(Action&lt; T &gt; ifValue, Action ifNot)']]],
+  ['match_3c_20k_20_3e',['Match&lt; K &gt;',['../struct_leap_1_1_unity_1_1_maybe.html#afe13439839657eb44f2a88cdb6b0d0ac',1,'Leap::Unity::Maybe']]],
+  ['matrix',['Matrix',['../struct_leap_1_1_matrix.html#a0070eab9ad17515aec4d27e93c8037bb',1,'Leap.Matrix.Matrix(Matrix other)'],['../struct_leap_1_1_matrix.html#a47bc47324a84f42179a8717fa4f40817',1,'Leap.Matrix.Matrix(Vector xBasis, Vector yBasis, Vector zBasis)'],['../struct_leap_1_1_matrix.html#a803a35361c96dfbf8c8116b070b0c404',1,'Leap.Matrix.Matrix(Vector xBasis, Vector yBasis, Vector zBasis, Vector origin)'],['../struct_leap_1_1_matrix.html#afa45522d026d02fc0965a3f54128c4b2',1,'Leap.Matrix.Matrix(Vector axis, float angleRadians)'],['../struct_leap_1_1_matrix.html#a8c05bb05e8ed2e16cd546aa059dbc717',1,'Leap.Matrix.Matrix(Vector axis, float angleRadians, Vector translation)']]],
+  ['maybe',['Maybe',['../struct_leap_1_1_unity_1_1_maybe.html#abfc9d8c6b1cf1e222491254e719da954',1,'Leap::Unity::Maybe']]],
+  ['mirrorx',['MirrorX',['../struct_leap_1_1_leap_transform.html#a1184d7a37a603a07ed15373bb08c8901',1,'Leap::LeapTransform']]],
+  ['mirrorz',['MirrorZ',['../struct_leap_1_1_leap_transform.html#a699bd459e338da85f1ee7c2de9e466de',1,'Leap::LeapTransform']]],
+  ['moveto',['MoveTo',['../interface_leap_1_1_unity_1_1_interaction_1_1_i_grasped_movement_handler.html#a49da4845ba5c20aa1ff075745b634c78',1,'Leap.Unity.Interaction.IGraspedMovementHandler.MoveTo()'],['../class_leap_1_1_unity_1_1_interaction_1_1_kinematic_grasped_movement.html#adfd0036833934df0d569feb112c7345e',1,'Leap.Unity.Interaction.KinematicGraspedMovement.MoveTo()'],['../class_leap_1_1_unity_1_1_interaction_1_1_non_kinematic_grasped_movement.html#a08d130dc9eb2ddc98347725867b2f6de',1,'Leap.Unity.Interaction.NonKinematicGraspedMovement.MoveTo()']]],
+  ['multiply',['Multiply',['../struct_leap_1_1_leap_quaternion.html#a19295cb26ceaa4f798ee093af641c1de',1,'Leap::LeapQuaternion']]]
+];

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/** Öffnen und Schließen des statischen Menüs bei Escape
+ */
 public class OpenMenu : MonoBehaviour
 {
 	public Canvas menu;
